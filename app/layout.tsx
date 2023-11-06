@@ -14,7 +14,7 @@ export const revalidate = 0;
 export default async function RootLayout({ children, }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={font.className}>
+      <body className={`${font.className} antialiased`}>
         <Sidebar >
           {children}
         </Sidebar>

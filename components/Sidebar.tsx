@@ -1,9 +1,12 @@
 "use client";
 import { useMemo } from "react";
+import { usePathname } from "next/navigation";
+
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import { HiChatAlt } from 'react-icons/hi'
+import { HiUsers } from 'react-icons/hi'
 import { twMerge } from "tailwind-merge";
-import { usePathname } from "next/navigation";
 import SidebarItem from "./SidebarItem";
 import Box from "./Box";
 
@@ -18,8 +21,20 @@ const Sidebar = ({ children }: SidebarProps) => {
     {
       icon: HiHome,
       label: 'Home',
-      active: pathname !== '/search',
+      active: pathname === '/',
       href: '/'
+    },
+    {
+      icon: HiChatAlt,
+      label: 'Chat',
+      active: pathname === '/chat',
+      href: '/chat'
+    },
+    {
+      icon: HiUsers,
+      label: 'Users',
+      active: pathname === '/users',
+      href: '/users'
     },
     {
       icon: BiSearch,
@@ -61,7 +76,7 @@ const Sidebar = ({ children }: SidebarProps) => {
           {/* <Library songs={songs} /> */}
         </Box>
       </div>
-      <main className="h-full w-full flex-1 overflow-y-auto py-2">
+      <main className="h-full w-full flex-1 md:py-2 md:pr-2 md:rounded overflow-y-auto">
         {children}
       </main>
     </div>

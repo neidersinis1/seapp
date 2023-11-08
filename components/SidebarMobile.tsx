@@ -1,4 +1,5 @@
 "use client";
+
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 
@@ -7,14 +8,14 @@ import { BiSearch } from "react-icons/bi";
 import { HiChatAlt } from 'react-icons/hi'
 import { HiUsers } from 'react-icons/hi'
 import { twMerge } from "tailwind-merge";
-import SidebarItem from "./SidebarItem";
+import SidebarItemMobile from "./SidebarItemMobile";
 import Box from "./Box";
 
-interface SidebarProps {
-  children: React.ReactNode;
-}
+// interface SidebarProps {
+//   children: React.ReactNode;
+// }
 
-const Sidebar = ({ children }: SidebarProps) => {
+const SidebarMobile = () => {
   const pathname = usePathname();
 
   const routes = useMemo(() => [
@@ -55,11 +56,11 @@ const Sidebar = ({ children }: SidebarProps) => {
     >
       <div 
         className="
-          hidden 
-          md:flex 
+          md:hidden 
+          flex 
           flex-col 
           gap-y-2 
-          bg-black 
+          text-black 
           h-full 
           w-[300px] 
           p-2
@@ -68,19 +69,13 @@ const Sidebar = ({ children }: SidebarProps) => {
         <Box>
           <div className="flex flex-col gap-y-2 px-5 py-2">
             {routes.map((item) => (
-              <SidebarItem key={item.label} {...item} />
+              <SidebarItemMobile key={item.label} {...item} />
             ))}
           </div>
         </Box>
-        <Box className="overflow-y-auto h-full">
-          {/* <Library songs={songs} /> */}
-        </Box>
       </div>
-      <main className="h-full w-full flex-1 md:py-2 md:pr-2 md:rounded overflow-y-auto">
-        {children}
-      </main>
     </div>
   );
 }
  
-export default Sidebar;
+export default SidebarMobile;

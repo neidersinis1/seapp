@@ -27,7 +27,7 @@ export async function getServerSide(context: NextPageContext) {
   }
 }
 
-const Auth = () => {
+const AuthComponent = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState('');
@@ -51,7 +51,7 @@ const Auth = () => {
 
       router.push('/');
     } catch (error) {
-      console.log(error);
+      console.log('page-auth',error);
     }
   }, [email, password, router]);
 
@@ -65,7 +65,7 @@ const Auth = () => {
 
       login();
     } catch (error) {
-        console.log(error);
+      console.log('page-auth register',error);
     }
   }, [email, name, password, login]);
 
@@ -95,7 +95,7 @@ const Auth = () => {
               <Input
                 id="email"
                 type="email"
-                label="Email address or phone number"
+                label="Email address"
                 value={email}
                 onChange={(e: any) => setEmail(e.target.value)} 
               />
@@ -120,8 +120,8 @@ const Auth = () => {
               </div>
             </div>
             <p className="text-neutral-500 mt-12">
-              {variant === 'login' ? 'First time using Netflix?' : 'Already have an account?'}
-              <span onClick={toggleVariant} className="text-white ml-1 hover:underline cursor-pointer">
+              {variant === 'login' ? 'First time using TransAppT?' : 'Already have an account?'}
+              <span onClick={toggleVariant} className="text-white ml-2 hover:underline cursor-pointer">
                 {variant === 'login' ? 'Create an account' : 'Login'}
               </span>
               .
@@ -133,4 +133,4 @@ const Auth = () => {
   );
 }
 
-export default Auth;
+export default AuthComponent;

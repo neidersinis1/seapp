@@ -119,10 +119,10 @@ const AuthComponent = () => {
                 <FaGithub size={32} />
               </div>
             </div>
-            <p className="text-neutral-500 mt-12">
-              {variant === 'login' ? 'First time using TransAppT?' : 'Already have an account?'}
-              <span onClick={toggleVariant} className="text-white ml-2 hover:underline cursor-pointer">
-                {variant === 'login' ? 'Create an account' : 'Login'}
+            <p className="text-neutral-500 mt-12 selec-none block">
+              {variant === 'login' ? 'Primera en TransAppT?' : 'Ya tienes una cuenta?'}
+              <span onClick={toggleVariant} className="text-white ml-2 hover:underline md:cursor-pointer selec-none">
+                {variant === 'login' ? 'Crea una cuenta' : 'Inicia Seccion'}
               </span>
               .
             </p>

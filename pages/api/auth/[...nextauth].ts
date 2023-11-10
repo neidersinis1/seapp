@@ -34,9 +34,11 @@ export const authOptions: AuthOptions = {
           throw new Error('Email and password required');
         }
 
-        const user = await prismadb.user.findUnique({ where: {
-          email: credentials.email
-        }});
+        const user = await prismadb.user.findUnique({
+          where: {
+            email: credentials.email
+          }
+        });
 
         if (!user || !user.hashedPassword) {
           throw new Error('Email does not exist');
@@ -61,7 +63,7 @@ export const authOptions: AuthOptions = {
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
-  secret: process.env.NEXTaUTH_SECRET
+  secret: process.env.NEXTAUTH_SECRET
 };
 
 export default NextAuth(authOptions);

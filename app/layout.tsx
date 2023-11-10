@@ -4,6 +4,9 @@ import Sidebar from '@/components/Sidebar'
 
 import './globals.css'
 import NextAuthProvider from './auth-provider/auth-provider'
+import AuthContext from './messenger/context/AuthContext'
+import ToasterContext from './messenger/context/ToasterContext'
+import ActiveStatus from './messenger/components/ActiveStatus'
 
 const font = Figtree({ subsets: ['latin'] })
 
@@ -18,11 +21,15 @@ export default async function RootLayout({ children, }: { children: React.ReactN
   return (
     <html lang="es">
       <body className={`${font.className} antialiased`}>
-        <NextAuthProvider >
-          <Sidebar >
-            {children}
-          </Sidebar>
-        </NextAuthProvider>
+        <AuthContext>
+          <ToasterContext />
+          <ActiveStatus />
+          <NextAuthProvider >
+            <Sidebar >
+              {children}
+            </Sidebar>
+          </NextAuthProvider>
+        </AuthContext>
       </body>
     </html>
   )

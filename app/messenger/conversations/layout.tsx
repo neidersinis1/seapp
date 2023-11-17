@@ -1,6 +1,6 @@
-import getConversations from "@/app/messenger/actions/getConversation";
-import getUsers from "@/app/messenger/actions/getUsers";
-import Sidebar from "@/app/messenger/components/sidebar/Sidebar";
+import getConversations from "@/app/actions/getConversation";
+import getUsers from "@/app/actions/getUsers";
+import Sidebar from "@/app/components/sidebarMessage/Sidebar";
 import ConversationList from "./components/ConversationList";
 
 export default async function ConversationsLayout({

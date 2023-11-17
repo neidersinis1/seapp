@@ -4,7 +4,7 @@ import { Fragment, useMemo, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { IoClose, IoTrash } from 'react-icons/io5'
 import useActiveList from '@/app/hooks/useActiveList';
-import Avatar from '@/components/Avatar';
+import Avatar from '@/app/components/Avatar';
 import ConfirmModal from './ConfirModal';
 
 interface ProfileDrawerProps {
@@ -22,8 +22,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
   return (
     <>
-      <ConfirmModal 
-        isOpen={confirmOpen} 
+      <ConfirmModal
+        isOpen={confirmOpen}
         onClose={() => setConfirmOpen(false)}
       />
       <Transition.Root show={isOpen} as={Fragment}>
@@ -37,8 +37,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-          <div className="fixed inset-0 bg-black bg-opacity-40" />
-        </Transition.Child>
+            <div className="fixed inset-0 bg-black bg-opacity-40" />
+          </Transition.Child>
 
           <div className="fixed inset-0 overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
@@ -71,7 +71,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <div className="flex flex-col items-center">
                           <div className="mb-2">
-                            <Avatar  />
+                            <Avatar />
                           </div>
                           <div>
                             {/* {title} */}
@@ -89,10 +89,10 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                               </div>
                             </div>
                           </div>
-                        <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
-                        <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
-                        </dl>
-                      </div>
+                          <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
+                            <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
+                            </dl>
+                          </div>
                         </div>
                       </div>
                     </div>

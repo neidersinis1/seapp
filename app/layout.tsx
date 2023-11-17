@@ -1,5 +1,5 @@
 import { Figtree } from 'next/font/google'
-import Sidebar from '@/components/Sidebar'
+import Sidebar from '@/app/components/Sidebar'
 // import { SessionProvider } from "next-auth/react"
 
 import './globals.css'

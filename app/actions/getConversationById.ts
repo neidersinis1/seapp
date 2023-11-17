@@ -10,7 +10,7 @@ const getConversationById = async (
     if (!currentUser?.email) {
       return null;
     }
-  
+
     const conversation = await prisma.conversation.findUnique({
       where: {
         id: conversationId

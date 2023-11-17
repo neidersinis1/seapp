@@ -1,6 +1,6 @@
 'use client'
 
-import Header from "../../../components/Header";
+import Header from "../../components/Header";
 import Body from "../components/Body";
 import Form from "../components/Form";
 import AuthComponent from "../components/AuthComponent";
@@ -11,11 +11,11 @@ interface IParams {
   conversationId: string;
 }
 
-const ChatId =  ({ params }: { params: IParams }) => {
-  const {data:session} =  useSession();
+const ChatId = ({ params }: { params: IParams }) => {
+  const { data: session } = useSession();
 
   if (session) {
-    return ( 
+    return (
       <div className="lg:pl-80 h-full">
         <div className="h-full flex flex-col">
           <Header />
@@ -25,13 +25,13 @@ const ChatId =  ({ params }: { params: IParams }) => {
       </div>
     );
   } else {
-   return <AuthComponent />;
+    return <AuthComponent />;
   }
 
 }
 
 export default ChatId;
-  
+
 //   const conversation = await getConversationById(params.conversationId);
 //   const messages = await getMessages(params.conversationId);
 

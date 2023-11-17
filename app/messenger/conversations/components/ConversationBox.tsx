@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import clsx from "clsx";
 
 import Avatar from "@/app/messenger/components/Avatar";
-import useOtherUser from "@/app/messenger/hooks/useOtherUser";
+import useOtherUser from "@/app/hooks/useOtherUser";
 import AvatarGroup from "@/app/messenger/components/AvatarGroup";
 import { FullConversationType } from "@/app/messenger/types";
 

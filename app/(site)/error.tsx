@@ -1,9 +1,9 @@
 "use client";
 
-import Box from "@/components/Box";
+import Box from "@/app/components/Box";
 
 const Error = () => {
-  return ( 
+  return (
     <Box className="h-full flex items-center justify-center">
       <div className="text-neutral-400">
         Something went wrong.
@@ -11,5 +11,5 @@ const Error = () => {
     </Box>
   );
 }
- 
+
 export default Error;

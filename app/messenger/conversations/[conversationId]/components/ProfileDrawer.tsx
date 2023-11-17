@@ -6,7 +6,7 @@ import { IoClose, IoTrash } from 'react-icons/io5'
 import { Conversation, User } from '@prisma/client';
 import { format } from 'date-fns';
 
-import useOtherUser from '@/app/messenger/hooks/useOtherUser';
+import useOtherUser from '@/app/hooks/useOtherUser';
 import useActiveList from '@/app/hooks/useActiveList';
 
 import Avatar from '@/app/messenger/components/Avatar';

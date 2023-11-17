@@ -1,13 +1,13 @@
 'use client'
 
-import Header from "@/components/Header";
+import Header from "@/app/components/Header";
 import Footer from "../components/Footer";
 import AuthComponent from "../components/AuthComponent";
 import { useSession } from "next-auth/react";
 
 export const revalidate = 0;
 
-export default  function Home() {
+export default function Home() {
   const { data: session, status } = useSession();
 
   if (session) {
@@ -26,7 +26,7 @@ export default  function Home() {
         <div className="mt-1 mb-1 w-full">
           <div className="flex  justify-between items-center">
             <h1 className="text-white text-2xl font-semibold">
-             users
+              users
             </h1>
           </div>
           <Footer />
@@ -34,6 +34,6 @@ export default  function Home() {
       </div>
     )
   } else {
-   return <AuthComponent />;
+    return <AuthComponent />;
   }
 }

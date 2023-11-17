@@ -8,7 +8,7 @@ import { MdOutlineGroupAdd } from 'react-icons/md';
 import clsx from "clsx";
 import { find, uniq } from 'lodash';
 
-import useConversation from "@/app/messenger/hooks/useConversation";
+import useConversation from "@/app/hooks/useConversation";
 import { pusherClient } from "@/app/messenger/libs/pusher";
 import GroupChatModal from "@/app/messenger/components/modals/GroupChatModal";
 import ConversationBox from "./ConversationBox";

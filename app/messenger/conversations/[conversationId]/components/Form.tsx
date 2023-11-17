@@ -12,7 +12,7 @@ import {
 } from "react-hook-form";
 import axios from "axios";
 import { CldUploadButton } from "next-cloudinary";
-import useConversation from "@/app/messenger/hooks/useConversation";
+import useConversation from "@/app/hooks/useConversation";
 
 const Form = () => {
   const { conversationId } = useConversation();

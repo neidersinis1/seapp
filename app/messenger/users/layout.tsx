@@ -1,5 +1,5 @@
-import getUsers from "@/app/messenger/actions/getUsers";
-import Sidebar from "@/app/messenger/components/sidebar/Sidebar";
+import getUsers from "@/app/actions/getUsers";
+import Sidebar from "@/app/components/sidebarMessage/Sidebar";
 import UserList from "./components/UserList";
 
 export default async function UsersLayout({

@@ -9,7 +9,7 @@ import Link from "next/link";
 // import useOtherUser from "@/app/hooks/useOtherUser";
 import useActiveList from "@/app/hooks/useActiveList";
 
-import Avatar from "@/components/Avatar";
+import Avatar from "@/app/components/Avatar";
 // import AvatarGroup from "@/app/components/AvatarGroup";
 import ProfileDrawer from "./ProfileDrawer";
 import { useRouter } from 'next/navigation';
@@ -21,29 +21,29 @@ import { useRouter } from 'next/navigation';
 // }
 
 const HeaderChat = () => {
-//   const otherUser = useOtherUser(conversation);
+  //   const otherUser = useOtherUser(conversation);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const router = useRouter();
 
   const { members } = useActiveList();
-//   const isActive = members.indexOf(otherUser?.email!) !== -1;
-//   const statusText = useMemo(() => {
-//     if (conversation.isGroup) {
-//       return `${conversation.users.length} members`;
-//     }
+  //   const isActive = members.indexOf(otherUser?.email!) !== -1;
+  //   const statusText = useMemo(() => {
+  //     if (conversation.isGroup) {
+  //       return `${conversation.users.length} members`;
+  //     }
 
-//     return isActive ? 'Active' : 'Offline'
-//   }, [conversation, isActive]);
+  //     return isActive ? 'Active' : 'Offline'
+  //   }, [conversation, isActive]);
 
   return (
-  <>
-    <ProfileDrawer 
-     
-      isOpen={drawerOpen} 
-      onClose={() => setDrawerOpen(false)}
-    />
-    <div 
-      className="
+    <>
+      <ProfileDrawer
+
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+      />
+      <div
+        className="
         //bg-sky-500 
         bg-gradient-to-b 
         from-sky-800
@@ -58,13 +58,13 @@ const HeaderChat = () => {
         shadow-sm
         md:rounded
       "
-    >
-      <div className="flex gap-3 items-center">
-        {/* <Link */}
-        <button
-          onClick={() => router.back()}
-          // href="/" 
-          className="
+      >
+        <div className="flex gap-3 items-center">
+          {/* <Link */}
+          <button
+            onClick={() => router.back()}
+            // href="/" 
+            className="
             rounded-full 
             bg-black 
             lg:hidden 
@@ -74,35 +74,35 @@ const HeaderChat = () => {
             transition 
             cursor-pointer
           "
-         > 
-          <HiChevronLeft size={32} />
+          >
+            <HiChevronLeft size={32} />
           </button>
-        {/* </Link> */}
-        {/* {conversation.isGroup ? (
+          {/* </Link> */}
+          {/* {conversation.isGroup ? (
           <AvatarGroup users={conversation.users} />
         ) : (
           <Avatar user={otherUser} />
         )} */}
-        <div className="flex flex-col">
-          {/* <div>{conversation.name || otherUser.name}</div>
+          <div className="flex flex-col">
+            {/* <div>{conversation.name || otherUser.name}</div>
           <div className="text-sm font-light text-neutral-500">
             {statusText}
           </div> */}
+          </div>
         </div>
-      </div>
-      <HiEllipsisHorizontal
-        size={32}
-        onClick={() => setDrawerOpen(true)}
-        className="
+        <HiEllipsisHorizontal
+          size={32}
+          onClick={() => setDrawerOpen(true)}
+          className="
           text-sky-200
           cursor-pointer
           hover:text-sky-100
           transition
         "
-      />
-    </div>
+        />
+      </div>
     </>
   );
 }
- 
+
 export default HeaderChat;

@@ -7,7 +7,7 @@ import { getSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
-import  Input  from '@/components/Input'
+import Input from '@/app/components/Input'
 import Image from 'next/image'
 
 export async function getServerSide(context: NextPageContext) {
@@ -51,7 +51,7 @@ const AuthComponent = () => {
 
       router.push('/');
     } catch (error) {
-      console.log('page-auth',error);
+      console.log('page-auth', error);
     }
   }, [email, password, router]);
 
@@ -65,7 +65,7 @@ const AuthComponent = () => {
 
       login();
     } catch (error) {
-      console.log('page-auth register',error);
+      console.log('page-auth register', error);
     }
   }, [email, name, password, login]);
 
@@ -89,7 +89,7 @@ const AuthComponent = () => {
                   type="text"
                   label="Username"
                   value={name}
-                  onChange={(e: any) => setName(e.target.value)} 
+                  onChange={(e: any) => setName(e.target.value)}
                 />
               )}
               <Input
@@ -97,14 +97,14 @@ const AuthComponent = () => {
                 type="email"
                 label="Email address"
                 value={email}
-                onChange={(e: any) => setEmail(e.target.value)} 
+                onChange={(e: any) => setEmail(e.target.value)}
               />
               <Input
-                type="password" 
-                id="password" 
-                label="Password" 
+                type="password"
+                id="password"
+                label="Password"
                 value={password}
-                onChange={(e: any) => setPassword(e.target.value)} 
+                onChange={(e: any) => setPassword(e.target.value)}
               />
             </div>
             <button onClick={variant === 'login' ? login : register} className="bg-sky-600 bg-gradient-to-b

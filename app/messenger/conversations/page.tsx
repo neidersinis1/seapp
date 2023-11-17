@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 
-import useConversation from "@/app/messenger/hooks/useConversation";
+import useConversation from "@/app/hooks/useConversation";
 import EmptyState from "@/app/messenger/components/EmptyState";
 
 const Home = () => {

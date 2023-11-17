@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Conversation, User } from "@prisma/client";
 
-import useOtherUser from "@/app/messenger/hooks/useOtherUser";
+import useOtherUser from "@/app/hooks/useOtherUser";
 import useActiveList from "@/app/hooks/useActiveList";
 
 import Avatar from "@/app/messenger/components/Avatar";
